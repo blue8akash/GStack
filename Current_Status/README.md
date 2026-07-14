@@ -34,7 +34,7 @@ YYYY-MM-DD.N_<short-kebab-slug>.md
 4. **Write** `Current_Status/YYYY-MM-DD.N_<slug>.md`
 5. **Reconcile:** make sure live trackers agree with the snapshot
 6. **Report** the filename + a one-line summary
-7. **Global Sync:** If the file `E:\Context-Matrix\batch_tools\aggregate_coma_journey.py` exists, execute it using `python` to immediately update the global Co-Ma dashboards.
+7. **Global Sync:** You MUST immediately execute `python D:\Context-Matrix\batch_tools\generate_timeline.py` (if it exists) to instantly update the Global Timeline Feed. Do not skip this step!
 
 ---
 
