@@ -61,7 +61,7 @@ _WRITING_STYLE_PENDING=$([ -f ~/.gstack/.writing-style-prompt-pending ] && echo 
 echo "WRITING_STYLE_PENDING: $_WRITING_STYLE_PENDING"
 mkdir -p ~/.gstack/analytics
 if [ "$_TEL" != "off" ]; then
-echo '{"skill":"gstack","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(basename "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || echo "unknown")'"}'  >> ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
+echo '{"skill":"GStack","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(basename "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || echo "unknown")'"}'  >> ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
 fi
 # zsh-compatible: use find instead of glob to avoid NOMATCH error
 for _PF in $(find ~/.gstack/analytics -maxdepth 1 -name '.pending-*' 2>/dev/null); do
@@ -86,7 +86,7 @@ else
   echo "LEARNINGS: 0"
 fi
 # Session timeline: record skill start (local-only, never sent anywhere)
-~/.claude/skills/gstack/bin/gstack-timeline-log '{"skill":"gstack","event":"started","branch":"'"$_BRANCH"'","session":"'"$_SESSION_ID"'"}' 2>/dev/null &
+~/.claude/skills/gstack/bin/gstack-timeline-log '{"skill":"GStack","event":"started","branch":"'"$_BRANCH"'","session":"'"$_SESSION_ID"'"}' 2>/dev/null &
 # Check if CLAUDE.md has routing rules
 _HAS_ROUTING="no"
 if [ -f CLAUDE.md ] && grep -q "## Skill routing" CLAUDE.md 2>/dev/null; then
